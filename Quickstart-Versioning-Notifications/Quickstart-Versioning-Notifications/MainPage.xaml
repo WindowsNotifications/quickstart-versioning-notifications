@@ -1,0 +1,45 @@
+﻿<Page
+    x:Class="Quickstart_Versioning_Notifications.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Quickstart_Versioning_Notifications"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <ScrollViewer Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+        <StackPanel Margin="24">
+
+            <TextBlock
+                Text="Quickstart: How to version notifications for different builds of Windows 10"
+                Style="{StaticResource TitleTextBlockStyle}"
+                TextWrapping="Wrap"/>
+
+            <RichTextBlock Margin="0,12,0,0">
+                <Paragraph>
+                    This app illustrates how to send different local notifications depending on what build of Windows 10 the user is running.
+                </Paragraph>
+                <Paragraph/>
+                <Paragraph>This is useful if you want to take advantage of new adaptive tile template or interactive toast notification features, which are defined in XML and don't have API contracts to check. For example, in 10586, we added the ability for a tile notification to have both a peek and background image. On 10240, you might want to display a different notification since you can't have both your peek and background image.</Paragraph>
+                <Paragraph />
+                <Paragraph>In this app, we'll send a local tile notification that uses a peek image with 20% overlay if the user is running build 10586 or higher (peek overlay was added in that build). Otherwise, we'll just send a notification without the peek image, since the display name isn't readable without the overlay.</Paragraph>
+            </RichTextBlock>
+
+            <Button
+                x:Name="ButtonSendTileNotification"
+                Content="Click to send tile notification"
+                Click="ButtonSendTileNotification_Click"
+                HorizontalAlignment="Stretch"
+                Margin="0,12,0,0"/>
+
+            <RichTextBlock Margin="0,12,0,0">
+                <Paragraph>The button above sends a tile notification to this app's primary tile. Pin this app to your Start screen and observe the results.</Paragraph>
+            </RichTextBlock>
+
+        </StackPanel>
+
+
+
+    </ScrollViewer>
+</Page>
