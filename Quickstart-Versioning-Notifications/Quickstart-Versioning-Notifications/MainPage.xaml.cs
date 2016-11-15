@@ -1,4 +1,4 @@
-﻿using NotificationsExtensions.Tiles;
+﻿using Microsoft.Toolkit.Uwp.Notifications;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -65,24 +65,24 @@ namespace Quickstart_Versioning_Notifications
                             {
                                 Children =
                                 {
-                                    new TileText()
+                                    new AdaptiveText()
                                     {
                                         Text = $"Build {version.Build}",
-                                        Wrap = true
+                                        HintWrap = true
                                     },
 
-                                    new TileText()
+                                    new AdaptiveText()
                                     {
                                         Text = $"Family: {deviceFamily}",
-                                        Wrap = true
+                                        HintWrap = true
                                     }
                                 },
 
                                 // We include the peek image here
                                 PeekImage = new TilePeekImage()
                                 {
-                                    Source = new TileImageSource("Assets/map.jpg"),
-                                    Overlay = 20
+                                    Source = "Assets/map.jpg",
+                                    HintOverlay = 20
                                 }
                             }
                         }
@@ -103,16 +103,16 @@ namespace Quickstart_Versioning_Notifications
                             {
                                 Children =
                                 {
-                                    new TileText()
+                                    new AdaptiveText()
                                     {
                                         Text = $"Build {version.Build}",
-                                        Wrap = true
+                                        HintWrap = true
                                     },
 
-                                    new TileText()
+                                    new AdaptiveText()
                                     {
                                         Text = $"Family: {deviceFamily}",
-                                        Wrap = true
+                                        HintWrap = true
                                     }
                                 }
 
